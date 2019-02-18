@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LocalStorageService } from 'angular-2-local-storage';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'repro-app';
+
+  constructor(private localStorageService: LocalStorageService) {
+    this.localStorageService.set('testValue', 'test');
+  }
 }
